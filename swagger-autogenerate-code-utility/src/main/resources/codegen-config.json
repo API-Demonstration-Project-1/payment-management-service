@@ -1,0 +1,7 @@
+{
+  "apiPackage" : "product",
+  "groupId": "com.proarchs",
+  "artifactId": "com.proarchs.product",
+  "artifactVersion": "1.0.0",
+  "invokerPackage": "com.proarchs.product.controller"
+}

@@ -1,0 +1,606 @@
+swagger: '2.0'
+info:
+  version: 'v1'
+  title: Product Management API
+  contact: {}
+host: products.proarchs.com
+basePath: /
+schemes:
+- http
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+  /product:
+    get:
+      description: Get a list of Product
+      summary: Product_GET
+      tags:
+      - product
+      operationId: Product_GET
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: productName
+        in: query
+        required: false
+        type: string
+        description: Get List of Tenant Info based on a given Tenant Name
+      - name: productCategory
+        in: query
+        required: false
+        type: string
+        description: Get List of Tenant Info based on a given Tenant Email
+      responses:
+        200:
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Product'
+          headers: {}
+    post:
+      description: Add a new Product
+      summary: Product_POST
+      tags:
+      - product
+      operationId: Product_POST
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/Product'
+      responses:
+        201:
+          description: ''
+          schema:
+            $ref: '#/definitions/Productresponse1'
+          examples:
+            application/json:
+              success: true
+              message: The Product has been created successfully
+              data:
+                id: 123
+              error_code: 400
+          headers: {}
+  /product/{productId}:
+    post:
+      description: Product using Username & Password
+      summary: ProductByProductId_POST
+      tags:
+      - product
+      operationId: ProductByProductId_POST
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: productId
+        in: path
+        required: true
+        type: string
+        description: ''
+      - name: body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/Product'
+      responses:
+        201:
+          description: ''
+          schema:
+            $ref: '#/definitions/Productresponse1'
+          examples:
+            application/json:
+              success: true
+              message: The Product has been created successfully
+              data:
+                id: 123
+              error_code: 400
+          headers: {}
+        400:
+          description: 'TODO: Add error message'
+          schema:
+            $ref: '#/definitions/Error'
+          examples:
+            application/json:
+              message: Bad Request
+              success: false
+              data: {}
+              errorCode: -1
+    get:
+      description: Get a Product by productId
+      summary: ProductByProductId_GET
+      tags:
+      - product
+      operationId: ProductByProductId_GET
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: productId
+        in: path
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+          schema:
+            $ref: '#/definitions/Product'
+          examples:
+            application/json:
+              message: Forbidden
+              success: false
+              data:
+                productId: 123434
+                productShortName: PTMS_FREE
+                productLongName: PTMS_FREE_MONTHLY_SUBSCRIPTION
+                productDescription: PTMS service offered for free for a month from the date of subscription/registration
+                productSku: PTMS_FREE_1_MONTH
+                productCategoryId: 1
+                productUnitPrice: 0
+                productAvailable: Y
+                productTypeId: 1
+                productImagesId: 123
+              errorCode: -1
+          headers: {}
+        404:
+          description: 'TODO: Add error message'
+          schema:
+            $ref: '#/definitions/Error'
+          examples:
+            application/json:
+              message: Not Found
+              success: false
+              data: {}
+              errorCode: -1
+    put:
+      description: Update a Product by productId
+      summary: ProductByProductId_PUT
+      tags:
+      - product
+      operationId: ProductByProductId_PUT
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: productId
+        in: path
+        required: true
+        type: string
+        description: ''
+      - name: body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/Product'
+      responses:
+        200:
+          description: ''
+          schema:
+            $ref: '#/definitions/Product'
+          headers: {}
+        404:
+          description: 'TODO: Add error message'
+          schema:
+            $ref: '#/definitions/Error'
+          examples:
+            application/json:
+              message: Not Found
+              success: false
+              data: {}
+              errorCode: -1
+    delete:
+      description: Delete a Product by productId
+      summary: ProductByProductId_DELETE
+      tags:
+      - product
+      operationId: ProductByProductId_DELETE
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: productId
+        in: path
+        required: true
+        type: string
+        description: ''
+      responses:
+        204:
+          description: ''
+          headers: {}
+        404:
+          description: 'TODO: Add error message'
+          schema:
+            $ref: '#/definitions/Error'
+          examples:
+            application/json:
+              message: Not Found
+              success: false
+              data: {}
+              errorCode: -1
+  /category:
+    get:
+      description: Get a list of Category
+      summary: Category_GET
+      tags:
+      - category
+      operationId: Category_GET
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: categoryName
+        in: query
+        required: false
+        type: string
+        description: Get payment info for a given Tenant Name
+      responses:
+        200:
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Category'
+          headers: {}
+    post:
+      description: Add a new Category
+      summary: Category_POST
+      tags:
+      - category
+      operationId: Category_POST
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/Category'
+      responses:
+        201:
+          description: ''
+          schema:
+            $ref: '#/definitions/Categoryresponse'
+          examples:
+            application/json:
+              success: true
+              message: The Category has been created successfully
+              data:
+                id: 123
+              error_code: 400
+          headers: {}
+  /category/{categoryId}:
+    post:
+      description: Category using Username & Password
+      summary: CategoryByCategoryId_POST
+      tags:
+      - category
+      operationId: CategoryByCategoryId_POST
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: categoryId
+        in: path
+        required: true
+        type: string
+        description: ''
+      - name: body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/Category'
+      responses:
+        201:
+          description: ''
+          schema:
+            $ref: '#/definitions/Categoryresponse'
+          examples:
+            application/json:
+              success: true
+              message: The Category has been created successfully
+              data:
+                id: 123
+              error_code: 400
+          headers: {}
+        400:
+          description: 'TODO: Add error message'
+          schema:
+            $ref: '#/definitions/Error'
+          examples:
+            application/json:
+              message: Bad Request
+              success: false
+              data: {}
+              errorCode: -1
+    get:
+      description: Get a Category by categoryId
+      summary: CategoryByCategoryId_GET
+      tags:
+      - category
+      operationId: CategoryByCategoryId_GET
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: categoryId
+        in: path
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+          schema:
+            $ref: '#/definitions/Category'
+          examples:
+            application/json:
+              message: Forbidden
+              success: false
+              data:
+                productId: 123434
+                productShortName: PTMS_FREE
+                productLongName: PTMS_FREE_MONTHLY_SUBSCRIPTION
+                productDescription: PTMS service offered for free for a month from the date of subscription/registration
+                productSku: PTMS_FREE_1_MONTH
+                productCategoryId: 1
+                productUnitPrice: 0
+                productAvailable: Y
+                productTypeId: 1
+                productImagesId: 123
+              errorCode: -1
+          headers: {}
+        404:
+          description: 'TODO: Add error message'
+          schema:
+            $ref: '#/definitions/Error'
+          examples:
+            application/json:
+              message: Not Found
+              success: false
+              data: {}
+              errorCode: -1
+    put:
+      description: Update a Category by categoryId
+      summary: CategoryByCategoryId_PUT
+      tags:
+      - category
+      operationId: CategoryByCategoryId_PUT
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: categoryId
+        in: path
+        required: true
+        type: string
+        description: ''
+      - name: body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/Category'
+      responses:
+        200:
+          description: ''
+          schema:
+            $ref: '#/definitions/Category'
+          headers: {}
+        404:
+          description: 'TODO: Add error message'
+          schema:
+            $ref: '#/definitions/Error'
+          examples:
+            application/json:
+              message: Not Found
+              success: false
+              data: {}
+              errorCode: -1
+    delete:
+      description: Delete a Category by categoryId
+      summary: CategoryByCategoryId_DELETE
+      tags:
+      - category
+      operationId: CategoryByCategoryId_DELETE
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: categoryId
+        in: path
+        required: true
+        type: string
+        description: ''
+      responses:
+        204:
+          description: ''
+          headers: {}
+        404:
+          description: 'TODO: Add error message'
+          schema:
+            $ref: '#/definitions/Error'
+          examples:
+            application/json:
+              message: Not Found
+              success: false
+              data: {}
+              errorCode: -1
+definitions:
+  Product:
+    title: Product
+    type: object
+    properties:
+      productId:
+        description: This is the ID of the product
+        type: integer
+        format: int32
+      productShortName:
+        description: Short Searchable name of the product
+        type: string
+      productLongName:
+        description: Complete name of the product
+        type: string
+      productDescription:
+        description: This is detailed description of the product
+        type: string
+      productSku:
+        description: Internally identifiable sku for the product
+        type: string
+      productCategoryId:
+        description: Denotes the id of the category that the product belongs to. (foreign key to category table)
+        type: integer
+        format: int32
+      productUnitPrice:
+        description: Price of the product
+        type: number
+        format: double
+      productAvailable:
+        description: Denotes the availability of the product
+        type: string
+      productTypeId:
+        description: Denotes the type of the product(product variant)(foreign key from item_type)
+        type: integer
+        format: int32
+      productImagesId:
+        description: Points to bucket name of the S3 image store
+        type: string
+    required:
+    - productId
+    - productShortName
+    - productDescription
+    - productSku
+    - productCategoryId
+    - productUnitPrice
+  Category:
+    title: Category
+    type: object
+    properties:
+      categoryId:
+        description: This is the ID of the category
+        type: integer
+        format: int32
+      categoryName:
+        description: Name of the category
+        type: string
+      categoryDescription:
+        description: Description of the category
+        type: string
+    required:
+    - categoryId
+  Error:
+    title: Error
+    type: object
+    properties:
+      message:
+        description: This is the Verification-related message
+        type: string
+      success:
+        description: True or False
+        type: boolean
+      data:
+        description: This is any data
+        type: object
+      errorCode:
+        description: This is gives error code info
+        type: integer
+        format: int32
+    required:
+    - message
+    - success
+  ProductResponse:
+    title: ProductResponse
+    type: object
+    properties:
+      message:
+        description: This is the Verification-related message
+        type: string
+      success:
+        description: True or False
+        type: boolean
+      data:
+        $ref: '#/definitions/Product'
+      errorCode:
+        description: This is gives error code info
+        type: integer
+        format: int32
+    required:
+    - message
+    - success
+  Categoryresponse:
+    title: Categoryresponse
+    example:
+      success: true
+      message: The Category has been created successfully
+      data:
+        id: 123
+      error_code: 400
+    type: object
+    properties:
+      success:
+        type: boolean
+      message:
+        type: string
+      data:
+        $ref: '#/definitions/Data1'
+      error_code:
+        type: integer
+        format: int32
+    required:
+    - success
+    - message
+    - data
+    - error_code
+  Data1:
+    title: Data1
+    example:
+      id: 123
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+    required:
+    - id
+  Productresponse1:
+    title: Productresponse1
+    example:
+      success: true
+      message: The Product has been created successfully
+      data:
+        id: 123
+      error_code: 400
+    type: object
+    properties:
+      success:
+        type: boolean
+      message:
+        type: string
+      data:
+        $ref: '#/definitions/Data1'
+      error_code:
+        type: integer
+        format: int32
+    required:
+    - success
+    - message
+    - data
+    - error_code
+tags:
+- name: product
+  description: ''
+- name: category
+  description: ''

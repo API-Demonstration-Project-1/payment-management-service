@@ -1,5 +1,10 @@
 # Compiled class file
 *.class
+.classpath 
+.project
+./target/*
+*target/**
+.swagger-codegen-ignore
 
 # Log file
 *.log
