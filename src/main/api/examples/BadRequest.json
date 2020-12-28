@@ -1,5 +1,5 @@
 {
-  "message": "Bad Request",
   "success": false,
-  "errorCode": 400
+  "message": "Bad Request",
+  "errorCode": -1
 }

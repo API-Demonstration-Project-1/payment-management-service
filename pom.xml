@@ -9,11 +9,11 @@
 		<version>2.2.2.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.proarchs.notification</groupId>
-	<artifactId>notification-management-service</artifactId>
+	<groupId>com.toystore.ecomm</groupId>
+	<artifactId>payment-management-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>notification-management-service</name>
-	<description>Notification Management Service</description>
+	<name>payment-management-service</name>
+	<description>E-Commerce Project - Tenant Management Service</description>
 
 	<packaging>jar</packaging>
 
@@ -158,9 +158,9 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.twilio.sdk</groupId>
-			<artifactId>twilio</artifactId>
-			<version>8.5.1</version>
+			<groupId>com.stripe</groupId>
+			<artifactId>stripe-java</artifactId>
+			<version>20.8.0</version>
 		</dependency>
 
 		<dependency>

@@ -1,5 +1,5 @@
 {
-    "message" : "Not found",
-    "success" : false,
-    "errorCode" : 404
+  "success": false,
+  "message": "Not Found",
+  "errorCode": -1
 }

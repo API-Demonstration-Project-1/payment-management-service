@@ -1,0 +1,119 @@
+#%RAML 1.0
+
+title: Payment Management API
+version: v1
+baseUri: http://www.proarchs.com/payments
+
+types:
+  Payment: !include types/Payment.raml
+  Subscriptionpayment: !include types/Subscriptionpayment.raml
+  Subscriptioncustomer: !include types/Subscriptioncustomer.raml
+  Subscriptionproduct: !include types/Subscriptionproduct.raml
+  Error: !include types/Error.raml
+  Message: !include types/AlertMessage.raml
+
+resourceTypes:
+  collection: !include resourceTypes/collection.raml
+  collection-item: !include resourceTypes/collection-item.raml
+
+traits:
+  hasRequestItem: !include traits/hasRequestItem.raml
+  hasRequestItemWithResponseMessage: !include traits/hasRequestItemWithResponseMessage.raml
+  hasResponseItem: !include traits/hasResponseItem.raml
+  hasResponseCollection: !include traits/hasResponseCollection.raml
+  hasBadRequest: !include traits/hasBadRequest.raml
+  hasForbidden: !include traits/hasForbidden.raml
+  hasNotFound: !include traits/hasNotFound.raml
+  hasUnauthorized: !include traits/hasUnauthorized.raml
+
+/subscriptionpayment:
+    type: collection
+
+    /{subscriptionPaymentId}:
+        type: collection-item
+
+    /paymentsucceeded:
+        post:
+          responses:
+            200:
+              body:
+                application/json:
+                  type: Subscriptionpayment
+                  example: !include examples/Subscriptionpayment.json
+
+    /paymentfailed:
+        post:
+          responses:
+            200:
+              body:
+                application/json:
+                  type: Subscriptionpayment
+                  example: !include examples/Subscriptionpayment.json
+
+    /paymentactionrequired:
+        get:
+          responses:
+            200:
+              body:
+                application/json:
+                  type: Subscriptionpayment
+                  example: !include examples/Subscriptionpayment.json
+
+    /scheduleexpires:
+        post:
+          responses:
+            200:
+              body:
+                application/json:
+                  type: Message
+
+    /schedulecreated:
+        post:
+          responses:
+            200:
+              body:
+                application/json:
+                  type: Message
+
+    /trialexpired:
+        post:
+          responses:
+            200:
+              body:
+                application/json:
+                  type: Message
+
+    /trialends:
+        post:
+          responses:
+            200:
+              body:
+                application/json:
+                  type: Message
+
+/payment:
+  type: collection
+
+  get:
+    queryParameters:
+      tenantName:
+        description: Get payment info for a given Tenant Name
+        required: false
+        type: string
+      paymentStatus:
+        description: Get all payment info based on payment status
+        required: false
+        type: string
+      paymentMethod:
+        description: Get all payment info based on payment method
+        required: false
+        type: string
+
+  /{paymentId}:
+    type: collection-item
+
+/subscriptioncustomer:
+  type: collection
+
+/subscriptionproduct:
+  type: collection

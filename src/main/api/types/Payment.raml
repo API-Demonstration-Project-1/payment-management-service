@@ -1,0 +1,35 @@
+#%RAML 1.0 DataType
+
+properties:
+  paymentId:
+    description: This is the ID of the payment made
+    required: true
+    type: string
+  paymentSessionId:
+      description: This is the reference no. from Payment Gateway
+      required: true
+      type: string
+  tenantId:
+    description: This is the ID of the Tenant who made payment
+    required: false
+    type: string
+  amount:
+    description: This is the amount value
+    required: true
+    type: number
+  paymentMode:
+    description: This gives the payment mode (payment, subscription, setup) used.
+    required: true
+    type: string
+  paymentMethod:
+    description: This gives the payment method (card, upi, wallet) used.
+    required: true
+    type: string
+  status:
+    description: This gives the Status of the payment
+    required: true
+    type: string
+  description:
+    description: This gives the description about the payment
+    required: false
+    type: string

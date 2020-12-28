@@ -1,0 +1,16 @@
+{
+    "subscriptionPaymentId" : 101,
+    "subscriptionId" : "sub_IHhn17uFuM6ZQU",
+    "subscriptionStatus" : "active",
+    "amount" : 100,
+    "paymentMethod" : "card",
+    "invoiceStatus" : "paid",
+    "paymentIntentStatus" : "succeeded",
+    "customerId" : "cus_IHRDXXygHnA2a5",
+    "invoiceId" : "in_1HgsLSGpfnkrm8HZNBKS766T",
+    "paymentIntentId" : "pi_1HglLWGpfnkrm8HZLre4Ia8B",
+    "subscriptionStart" : "29-Oct-2020 10:10:12",
+    "subscriptionEnd" : "28-Oct-2022 10:10:12",
+    "trialStart": "29-Oct-2020 10:10:12",
+    "trialEnd": "28-Nov-2020 10:10:12"
+}

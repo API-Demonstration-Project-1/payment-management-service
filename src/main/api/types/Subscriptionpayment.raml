@@ -1,0 +1,31 @@
+#%RAML 1.0 DataType
+
+properties:
+  subscriptionCustomerId:
+    description: This is the ID of the Customer created
+    required: true
+    type: integer
+  planType:
+    description: This is the Subscription Plan Type
+    required: true
+    type: string
+  renewalType:
+    description: This is the Subscription Renewal Type
+    required: true
+    type: string
+  paymentMethod:
+    description: This gives the payment method (card, upi, wallet) used.
+    required: true
+    type: string
+  trialDays:
+    description: This gives the no. of trial days of the Subscription
+    required: false
+    type: integer
+  cardToken:
+    description: This gives the Card Token
+    required: false
+    type: string
+  cancelAtPeriodEnd:
+    description: This tells whether Subscription should be cancelled as soon as it expires.
+    required: false
+    type: string

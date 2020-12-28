@@ -1,0 +1,63 @@
+#%RAML 1.0 DataType
+
+properties:
+  subscriptionPaymentId:
+    description: This is the ID of the payment made for Subscription
+    required: true
+    type: integer
+  subscriptionId:
+      description: This is the reference no. for created Subscription from Payment Gateway
+      required: true
+      type: string
+  subscriptionStatus:
+    description: This is the Status of the created Subscription from Payment Gateway
+    required: false
+    type: string
+  amount:
+    description: This is the amount value
+    required: true
+    type: number
+  paymentMethod:
+    description: This gives the payment method (card, upi, wallet) used.
+    required: true
+    type: string
+  invoiceStatus:
+    description: This gives the Status of the created Invoice from Payment Gateway
+    required: true
+    type: string
+  paymentIntentStatus:
+    description: This gives the Status of the created PaymentIntent from Payment Gateway
+    required: true
+    type: string
+  customerId:
+    description: This is the ID of the Customer created in Payment Gateway
+    required: true
+    type: string
+  invoiceId:
+    description: This is the ID of the created Invoice from Payment Gateway
+    required: true
+    type: string
+  paymentIntentId:
+    description: This is the ID of the created PaymentIntent from Payment Gateway
+    required: true
+    type: string
+  subscriptionStart:
+    description: This is the Subscription Start Timestamp
+    required: false
+    type: string
+  subscriptionEnd:
+    description: This is the Subscription End Timestamp
+    required: false
+    type: string
+  trialStart:
+    description: This is the Trial (if any) Start Timestamp
+    required: false
+    type: string
+  trialEnd:
+    description: This is the Trial (if any) End Timestamp
+    required: false
+    type: string
+  cancelAtPeriodEnd:
+    description: This tells whether Subscription should be cancelled as soon as it expires.
+    required: true
+    type: string

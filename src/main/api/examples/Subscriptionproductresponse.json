@@ -1,0 +1,9 @@
+{
+  "subscriptionProductId" : 1,
+  "planType" : "Professional",
+  "renewalType" : "Monthly",
+  "amount" : 100,
+  "currency" : "INR",
+  "productId" : "prod_IJSK7G1DqCuadA",
+  "priceId" : "price_1HipPjGpfnkrm8HZpoo5wKWd"
+}

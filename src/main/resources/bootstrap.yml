@@ -1,6 +1,6 @@
 spring:
   application:
-    name: notification-management-service
+    name: payment-management-service
   profiles:
     active:
       default
@@ -10,4 +10,4 @@ spring:
       uri: https://localhost:8888
 logging:
   level:
-    com.proarchs.notification: DEBUG
+    com.toystore.ecomm: DEBUG

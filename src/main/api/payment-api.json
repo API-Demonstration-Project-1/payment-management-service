@@ -1,0 +1,1207 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "v1",
+    "title": "Payment Management API",
+    "contact": {}
+  },
+  "host": "www.proarchs.com",
+  "basePath": "/payments",
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/subscriptionpayment": {
+      "post": {
+        "description": "Add a new Subscriptionpayment",
+        "summary": "Subscriptionpayment_POST",
+        "tags": [
+          "subscriptionpayment"
+        ],
+        "operationId": "Subscriptionpayment_POST",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Subscriptionpayment"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Subscriptionpaymentresponse"
+            },
+            "examples": {
+              "application/json": {
+                "success": true,
+                "message": "The Subscriptionpayment has been created successfully",
+                "data": {
+                  "id": 123
+                },
+                "error_code": 400
+              }
+            },
+            "headers": {}
+          }
+        }
+      },
+      "get": {
+        "description": "Get a list of Subscriptionpayment",
+        "summary": "Subscriptionpayment_GET",
+        "tags": [
+          "subscriptionpayment"
+        ],
+        "operationId": "Subscriptionpayment_GET",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Subscriptionpayment"
+              }
+            },
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/subscriptionpayment/{subscriptionPaymentId}": {
+      "post": {
+        "description": "Subscriptionpayment using Username & Password",
+        "summary": "Subscriptionpayment_POST",
+        "tags": [
+          "subscriptionpayment"
+        ],
+        "operationId": "PostSubscriptionpayment_POST",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "subscriptionPaymentId",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Subscriptionpayment"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Subscriptionpaymentresponse"
+            },
+            "examples": {
+              "application/json": {
+                "success": true,
+                "message": "The Subscriptionpayment has been created successfully",
+                "data": {
+                  "id": 123
+                },
+                "error_code": 400
+              }
+            },
+            "headers": {}
+          },
+          "400": {
+            "description": "TODO: Add error message",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            },
+            "examples": {
+              "application/json": {
+                "success": false,
+                "message": "Bad Request",
+                "errorCode": -1
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "description": "Get a Subscriptionpayment by subscriptionpaymentId",
+        "summary": "Subscriptionpayment_GET",
+        "tags": [
+          "subscriptionpayment"
+        ],
+        "operationId": "GetSubscriptionpayment_GET",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "subscriptionPaymentId",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Subscriptionpayment"
+            },
+            "headers": {}
+          },
+          "404": {
+            "description": "TODO: Add error message",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            },
+            "examples": {
+              "application/json": {
+                "success": false,
+                "message": "Not Found",
+                "errorCode": -1
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "description": "Update a Subscriptionpayment by subscriptionpaymentId",
+        "summary": "Subscriptionpayment_PUT",
+        "tags": [
+          "subscriptionpayment"
+        ],
+        "operationId": "Subscriptionpayment_PUT",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "subscriptionPaymentId",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Subscriptionpayment"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Subscriptionpayment"
+            },
+            "headers": {}
+          },
+          "404": {
+            "description": "TODO: Add error message",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            },
+            "examples": {
+              "application/json": {
+                "success": false,
+                "message": "Not Found",
+                "errorCode": -1
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "description": "Delete a Subscriptionpayment by subscriptionpaymentId",
+        "summary": "Subscriptionpayment_DELETE",
+        "tags": [
+          "subscriptionpayment"
+        ],
+        "operationId": "Subscriptionpayment_DELETE",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "subscriptionPaymentId",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "",
+            "headers": {}
+          },
+          "404": {
+            "description": "TODO: Add error message",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            },
+            "examples": {
+              "application/json": {
+                "success": false,
+                "message": "Not Found",
+                "errorCode": -1
+              }
+            }
+          }
+        }
+      }
+    },
+    "/subscriptionpayment/paymentsucceeded": {
+      "get": {
+        "summary": "SubscriptionpaymentPaymentsucceeded_GET",
+        "tags": [
+          "subscriptionpayment"
+        ],
+        "operationId": "SubscriptionpaymentPaymentsucceeded_GET",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Subscriptionpayment"
+            },
+            "examples": {
+              "application/json": {
+                "subscriptionCustomerId": 1,
+                "planType": "Professional",
+                "renewalType": "Monthly",
+                "paymentMethod": "card",
+                "trialDays": 15,
+                "cancelAtPeriodEnd": "Y"
+              }
+            },
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/subscriptionpayment/paymentfailed": {
+      "get": {
+        "summary": "SubscriptionpaymentPaymentfailed_GET",
+        "tags": [
+          "subscriptionpayment"
+        ],
+        "operationId": "SubscriptionpaymentPaymentfailed_GET",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Subscriptionpayment"
+            },
+            "examples": {
+              "application/json": {
+                "subscriptionCustomerId": 1,
+                "planType": "Professional",
+                "renewalType": "Monthly",
+                "paymentMethod": "card",
+                "trialDays": 15,
+                "cancelAtPeriodEnd": "Y"
+              }
+            },
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/subscriptionpayment/paymentactionrequired": {
+      "get": {
+        "summary": "SubscriptionpaymentPaymentactionrequired_GET",
+        "tags": [
+          "subscriptionpayment"
+        ],
+        "operationId": "SubscriptionpaymentPaymentactionrequired_GET",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Subscriptionpayment"
+            },
+            "examples": {
+              "application/json": {
+                "subscriptionCustomerId": 1,
+                "planType": "Professional",
+                "renewalType": "Monthly",
+                "paymentMethod": "card",
+                "trialDays": 15,
+                "cancelAtPeriodEnd": "Y"
+              }
+            },
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/subscriptionpayment/upcomingrenewal": {
+      "get": {
+        "summary": "SubscriptionpaymentUpcomingrenewal_GET",
+        "tags": [
+          "subscriptionpayment"
+        ],
+        "operationId": "SubscriptionpaymentUpcomingrenewal_GET",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Message"
+            },
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/subscriptionpayment/trialends": {
+      "get": {
+        "summary": "SubscriptionpaymentTrialends_GET",
+        "tags": [
+          "subscriptionpayment"
+        ],
+        "operationId": "SubscriptionpaymentTrialends_GET",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Message"
+            },
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/payment": {
+      "get": {
+        "description": "Get a list of Payment",
+        "summary": "Payment_GET",
+        "tags": [
+          "payment"
+        ],
+        "operationId": "Payment_GET",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "tenantName",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Get payment info for a given Tenant Name"
+          },
+          {
+            "name": "paymentStatus",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Get all payment info based on payment status"
+          },
+          {
+            "name": "paymentMethod",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Get all payment info based on payment method"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Payment"
+              }
+            },
+            "headers": {}
+          }
+        }
+      },
+      "post": {
+        "description": "Add a new Payment",
+        "summary": "Payment_POST",
+        "tags": [
+          "payment"
+        ],
+        "operationId": "Payment_POST",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Payment"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Paymentresponse"
+            },
+            "examples": {
+              "application/json": {
+                "success": true,
+                "message": "The Payment has been created successfully",
+                "data": {
+                  "id": 123
+                },
+                "error_code": 400
+              }
+            },
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/payment/{paymentId}": {
+      "post": {
+        "description": "Payment using Username & Password",
+        "summary": "PaymentByPaymentId_POST",
+        "tags": [
+          "payment"
+        ],
+        "operationId": "PaymentByPaymentId_POST",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "paymentId",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Payment"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Paymentresponse"
+            },
+            "examples": {
+              "application/json": {
+                "success": true,
+                "message": "The Payment has been created successfully",
+                "data": {
+                  "id": 123
+                },
+                "error_code": 400
+              }
+            },
+            "headers": {}
+          },
+          "400": {
+            "description": "TODO: Add error message",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            },
+            "examples": {
+              "application/json": {
+                "success": false,
+                "message": "Bad Request",
+                "errorCode": -1
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "description": "Get a Payment by paymentId",
+        "summary": "PaymentByPaymentId_GET",
+        "tags": [
+          "payment"
+        ],
+        "operationId": "PaymentByPaymentId_GET",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "paymentId",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Payment"
+            },
+            "headers": {}
+          },
+          "404": {
+            "description": "TODO: Add error message",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            },
+            "examples": {
+              "application/json": {
+                "success": false,
+                "message": "Not Found",
+                "errorCode": -1
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "description": "Update a Payment by paymentId",
+        "summary": "PaymentByPaymentId_PUT",
+        "tags": [
+          "payment"
+        ],
+        "operationId": "PaymentByPaymentId_PUT",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "paymentId",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Payment"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Payment"
+            },
+            "headers": {}
+          },
+          "404": {
+            "description": "TODO: Add error message",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            },
+            "examples": {
+              "application/json": {
+                "success": false,
+                "message": "Not Found",
+                "errorCode": -1
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "description": "Delete a Payment by paymentId",
+        "summary": "PaymentByPaymentId_DELETE",
+        "tags": [
+          "payment"
+        ],
+        "operationId": "PaymentByPaymentId_DELETE",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "paymentId",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "",
+            "headers": {}
+          },
+          "404": {
+            "description": "TODO: Add error message",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            },
+            "examples": {
+              "application/json": {
+                "success": false,
+                "message": "Not Found",
+                "errorCode": -1
+              }
+            }
+          }
+        }
+      }
+    },
+    "/subscriptioncustomer": {
+      "post": {
+        "description": "Add a new Subscriptioncustomer",
+        "summary": "Subscriptioncustomer_POST",
+        "tags": [
+          "subscriptioncustomer"
+        ],
+        "operationId": "Subscriptioncustomer_POST",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Subscriptioncustomer"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Subscriptioncustomerresponse"
+            },
+            "examples": {
+              "application/json": {
+                "success": true,
+                "message": "The Subscriptioncustomer has been created successfully",
+                "data": {
+                  "id": 123
+                },
+                "error_code": 400
+              }
+            },
+            "headers": {}
+          }
+        }
+      },
+      "get": {
+        "description": "Get a list of Subscriptioncustomer",
+        "summary": "Subscriptioncustomer_GET",
+        "tags": [
+          "subscriptioncustomer"
+        ],
+        "operationId": "Subscriptioncustomer_GET",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Subscriptioncustomer"
+              }
+            },
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/subscriptionproduct": {
+      "post": {
+        "description": "Add a new Subscriptionproduct",
+        "summary": "Subscriptionproduct_POST",
+        "tags": [
+          "subscriptionproduct"
+        ],
+        "operationId": "Subscriptionproduct_POST",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Subscriptionproduct"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Subscriptionproductresponse"
+            },
+            "examples": {
+              "application/json": {
+                "success": true,
+                "message": "The Subscriptionproduct has been created successfully",
+                "data": {
+                  "id": 123
+                },
+                "error_code": 400
+              }
+            },
+            "headers": {}
+          }
+        }
+      },
+      "get": {
+        "description": "Get a list of Subscriptionproduct",
+        "summary": "Subscriptionproduct_GET",
+        "tags": [
+          "subscriptionproduct"
+        ],
+        "operationId": "Subscriptionproduct_GET",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Subscriptionproduct"
+              }
+            },
+            "headers": {}
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Payment": {
+      "title": "Payment",
+      "type": "object",
+      "properties": {
+        "paymentId": {
+          "description": "This is the ID of the payment made",
+          "type": "string"
+        },
+        "paymentSessionId": {
+          "description": "This is the reference no. from Payment Gateway",
+          "type": "string"
+        },
+        "tenantId": {
+          "description": "This is the ID of the Tenant who made payment",
+          "type": "string"
+        },
+        "amount": {
+          "description": "This is the amount value",
+          "type": "number",
+          "format": "double"
+        },
+        "paymentMode": {
+          "description": "This gives the payment mode (payment, subscription, setup) used.",
+          "type": "string"
+        },
+        "paymentMethod": {
+          "description": "This gives the payment method (card, upi, wallet) used.",
+          "type": "string"
+        },
+        "status": {
+          "description": "This gives the Status of the payment",
+          "type": "string"
+        },
+        "description": {
+          "description": "This gives the description about the payment",
+          "type": "string"
+        }
+      },
+      "required": [
+        "paymentId",
+        "paymentSessionId",
+        "amount",
+        "paymentMode",
+        "paymentMethod",
+        "status"
+      ]
+    },
+    "Subscriptionpayment": {
+      "title": "Subscriptionpayment",
+      "type": "object",
+      "properties": {
+        "subscriptionCustomerId": {
+          "description": "This is the ID of the Customer created",
+          "type": "integer",
+          "format": "int32"
+        },
+        "planType": {
+          "description": "This is the Subscription Plan Type",
+          "type": "string"
+        },
+        "renewalType": {
+          "description": "This is the Subscription Renewal Type",
+          "type": "string"
+        },
+        "paymentMethod": {
+          "description": "This gives the payment method (card, upi, wallet) used.",
+          "type": "string"
+        },
+        "trialDays": {
+          "description": "This gives the no. of trial days of the Subscription",
+          "type": "integer",
+          "format": "int32"
+        },
+        "cancelAtPeriodEnd": {
+          "description": "This tells whether Subscription should be cancelled as soon as it expires.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "subscriptionCustomerId",
+        "planType",
+        "renewalType",
+        "paymentMethod"
+      ]
+    },
+    "Subscriptioncustomer": {
+      "title": "Subscriptioncustomer",
+      "type": "object",
+      "properties": {
+        "subscriptionCustomerId": {
+          "description": "This is the ID of the Subscription Customer",
+          "type": "integer",
+          "format": "int32"
+        },
+        "customerId": {
+          "description": "This is the Customer Reference ID from Stripe Payment Gateway",
+          "type": "string"
+        },
+        "customerName": {
+          "description": "This is the name of the Customer",
+          "type": "string"
+        }
+      },
+      "required": [
+        "subscriptionCustomerId",
+        "customerId"
+      ]
+    },
+    "Subscriptionproduct": {
+      "title": "Subscriptionproduct",
+      "type": "object",
+      "properties": {
+        "planType": {
+          "description": "This is the Plan type of the Subscription",
+          "type": "string"
+        },
+        "renewalType": {
+          "description": "This is the Renewal type of the Subscription",
+          "type": "string"
+        },
+        "amount": {
+          "description": "This is the Amount or Charge for the Subscription",
+          "type": "number",
+          "format": "double"
+        },
+        "currency": {
+          "description": "This is the Currency",
+          "type": "string"
+        }
+      },
+      "required": [
+        "planType",
+        "renewalType",
+        "amount",
+        "currency"
+      ]
+    },
+    "Error": {
+      "title": "Error",
+      "type": "object",
+      "properties": {
+        "message": {
+          "description": "This is the Verification-related message",
+          "type": "string"
+        },
+        "success": {
+          "description": "True or False",
+          "type": "boolean"
+        },
+        "data": {
+          "description": "This is any data",
+          "type": "object"
+        },
+        "errorCode": {
+          "description": "This is gives error code info",
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "message",
+        "success"
+      ]
+    },
+    "Message": {
+      "title": "Message",
+      "type": "object",
+      "properties": {
+        "message": {
+          "description": "This is the Alert Message to be notified about the upcoming events",
+          "type": "string"
+        }
+      },
+      "required": [
+        "message"
+      ]
+    },
+    "Data": {
+      "title": "Data",
+      "example": {
+        "id": 123
+      },
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "id"
+      ]
+    },
+    "Paymentresponse": {
+      "title": "Paymentresponse",
+      "example": {
+        "success": true,
+        "message": "The Payment has been created successfully",
+        "data": {
+          "id": 123
+        },
+        "error_code": 400
+      },
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/definitions/Data"
+        },
+        "error_code": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "success",
+        "message",
+        "data",
+        "error_code"
+      ]
+    },
+    "Subscriptioncustomerresponse": {
+      "title": "Subscriptioncustomerresponse",
+      "example": {
+        "success": true,
+        "message": "The Subscriptioncustomer has been created successfully",
+        "data": {
+          "id": 123
+        },
+        "error_code": 400
+      },
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/definitions/Data"
+        },
+        "error_code": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "success",
+        "message",
+        "data",
+        "error_code"
+      ]
+    },
+    "Subscriptionpaymentresponse": {
+      "title": "Subscriptionpaymentresponse",
+      "example": {
+        "success": true,
+        "message": "The Subscriptionpayment has been created successfully",
+        "data": {
+          "id": 123
+        },
+        "error_code": 400
+      },
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/definitions/Data"
+        },
+        "error_code": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "success",
+        "message",
+        "data",
+        "error_code"
+      ]
+    },
+    "Subscriptionproductresponse": {
+      "title": "Subscriptionproductresponse",
+      "example": {
+        "success": true,
+        "message": "The Subscriptionproduct has been created successfully",
+        "data": {
+          "id": 123
+        },
+        "error_code": 400
+      },
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/definitions/Data"
+        },
+        "error_code": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "success",
+        "message",
+        "data",
+        "error_code"
+      ]
+    }
+  },
+  "tags": [
+    {
+      "name": "subscriptionpayment",
+      "description": ""
+    },
+    {
+      "name": "payment",
+      "description": ""
+    },
+    {
+      "name": "subscriptioncustomer",
+      "description": ""
+    },
+    {
+      "name": "subscriptionproduct",
+      "description": ""
+    }
+  ]
+}

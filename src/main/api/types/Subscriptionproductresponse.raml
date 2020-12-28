@@ -1,0 +1,31 @@
+#%RAML 1.0 DataType
+
+properties:
+  subscriptionProductId:
+    description: This is the ID of the Subscription Product created
+    required: true
+    type: string
+  planType:
+    description: This is the Plan type of the Subscription
+    required: true
+    type: string
+  renewalType:
+    description: This is the Renewal type of the Subscription
+    required: true
+    type: string
+  amount:
+    description: This is the Amount or Charge for the Subscription
+    required: true
+    type: number
+  currency:
+    description: This is the Currency
+    required: true
+    type: string
+  productId:
+    description: This is the Product Reference ID generated in Stripe Payment Gateway
+    required: false
+    type: number
+  priceId:
+    description: This is the Price Reference ID generated in Stripe Payment Gateway.
+    required: false
+    type: string
