@@ -18,9 +18,10 @@ public class PTMSActiveMQConfig {
 	@Value("${proarchs.activemq.queue.stripe_event}")
 	private String stripeEventQName;
 	
-	@Value("${queue.subscription_expiring}")
-	private String subscriptionExpiringQueue;
-
+	/*
+	 * @Value("${queue.subscription_expiring}") private String
+	 * subscriptionExpiringQueue;
+	 */
 	@Bean
 	public ActiveMQConnectionFactory receiverActiveMQConnectionFactory() {
 		ActiveMQConnectionFactory activeMQConnectionFactory = new ActiveMQConnectionFactory();
@@ -54,7 +55,7 @@ public class PTMSActiveMQConfig {
 	@Bean
 	public JmsTemplate subscriptionExpiringJmsTemplate() {
 		JmsTemplate jmsTemplate = new JmsTemplate(cachingConnectionFactory());
-		jmsTemplate.setDefaultDestinationName(subscriptionExpiringQueue);
+		jmsTemplate.setDefaultDestinationName(stripeEventQName);
 
 		return jmsTemplate;
 	}
